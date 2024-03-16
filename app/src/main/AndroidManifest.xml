@@ -22,10 +22,10 @@
             android:name=".ui.roomdetails.RoomDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".ui.home.HomeFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.AuthActivity"
+            android:name=".ui.auth.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"

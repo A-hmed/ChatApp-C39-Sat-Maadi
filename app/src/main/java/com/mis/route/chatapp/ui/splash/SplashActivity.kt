@@ -1,12 +1,11 @@
 package com.mis.route.chatapp.ui.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.mis.route.chatapp.ui.auth.AuthActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.mis.route.chatapp.R
-
+import com.mis.route.chatapp.ui.auth.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun navigateHome() {
         Handler(mainLooper).postDelayed({
-            startActivity(Intent(this, AuthActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 2000)
     }

@@ -1,26 +1,24 @@
 package com.mis.route.chatapp.ui.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.mis.route.chatapp.R
 import com.mis.route.chatapp.databinding.ActivityAuthBinding
 
-class AuthActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityAuthBinding? = null
     private val binding: ActivityAuthBinding get() = _binding!!
 
     lateinit var navController: NavController
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initNavComponent()
-
     }
 
     private fun initNavComponent() {
