@@ -17,6 +17,7 @@
     <string name="enter_room_name">Enter Room Name</string>
     <string name="enter_room_description">Enter Room Description</string>
     <string name="choose_room_category">Choose Room Category</string>
+    <string name="loading">Loading...</string>
     <string-array name="rooms_fragments_titles">
         <item>MyRoomsFragment</item>
         <item>AllRoomsFragment</item>

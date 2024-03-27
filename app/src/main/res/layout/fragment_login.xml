@@ -2,6 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mis.route.chatapp.ui.auth.fragments.login.LoginViewModel" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,6 +32,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_container_til"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            error="@{viewModel.emailErrorLiveData}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -33,7 +43,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                />
+                android:text="@={viewModel.emailLiveData}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,6 +51,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_container_til"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            error="@{viewModel.passwordErrorLiveData}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -50,7 +61,8 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="@={viewModel.passwordLiveData}" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,6 +83,7 @@
             android:background="@drawable/shape_button_background"
             android:backgroundTint="@color/light_blue"
             android:paddingHorizontal="32dp"
+            android:onClick="@{() -> viewModel.login()}"
             app:layout_constraintTop_toBottomOf="@id/forgot_pass_tv">
 
             <TextView
@@ -110,6 +123,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/or_create_new_account"
             app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> viewModel.createAccountOnClick()}"
             app:layout_constraintTop_toBottomOf="@id/login_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
