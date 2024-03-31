@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mis.route.chatapp.R
 import com.mis.route.chatapp.databinding.ActivityHomeBinding
+import com.mis.route.chatapp.ui.createroom.RoomCreationActivity
 import com.mis.route.chatapp.ui.home.adapter.RoomsViewPagerAdapter
 import com.mis.route.chatapp.ui.roomdetails.RoomDetailsActivity
 
@@ -19,11 +20,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initRoomsViewPager()
-        binding.addRoomBtn.setOnClickListener { navigateToRoomDetails() }
+        binding.addRoomBtn.setOnClickListener { navigateToCreateRoom() }
     }
 
-    private fun navigateToRoomDetails() {
-        startActivity(Intent(this, RoomDetailsActivity::class.java))
+    private fun navigateToCreateRoom() {
+        startActivity(Intent(this, RoomCreationActivity::class.java))
     }
 
     private fun initRoomsViewPager() {

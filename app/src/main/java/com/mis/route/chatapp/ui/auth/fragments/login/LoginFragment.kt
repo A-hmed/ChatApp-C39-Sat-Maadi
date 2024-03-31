@@ -27,15 +27,18 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
         Log.e("LoginFragment", "events")
         super.observeLiveData()
         viewModel.events.observe(viewLifecycleOwner){
-            when(it){
-                is LoginScreenEvents.NavigateToHome -> {
-                    val intent = Intent(activity, HomeActivity::class.java)
-                    startActivity(intent)
-                }
-                is LoginScreenEvents.NavigateToRegister -> {
-                    findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            it?.let { event->
+                when(event){
+                    is LoginScreenEvents.NavigateToHome -> {
+                        val intent = Intent(activity, HomeActivity::class.java)
+                        startActivity(intent)
+                    }
+                    is LoginScreenEvents.NavigateToRegister -> {
+                        findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+                    }
                 }
             }
+
         }
     }
     override fun getLayoutId(): Int = R.layout.fragment_login

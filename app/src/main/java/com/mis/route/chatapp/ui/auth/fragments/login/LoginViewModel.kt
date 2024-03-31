@@ -15,7 +15,7 @@ class LoginViewModel: BaseViewModel(){
     var emailErrorLiveData = MutableLiveData<String?>()
     var passwordErrorLiveData = MutableLiveData<String?>()
     var authRepo = AuthRepoImpl()
-    var events = MutableLiveData<LoginScreenEvents>()
+    var events = MutableLiveData<LoginScreenEvents?>()
 
     fun login() {
         if(!validate()) return;
@@ -38,6 +38,7 @@ class LoginViewModel: BaseViewModel(){
     }
     fun createAccountOnClick(){
         events.value = LoginScreenEvents.NavigateToRegister
+        events.value = null
     }
     private fun validate(): Boolean {
         var isValid = true
